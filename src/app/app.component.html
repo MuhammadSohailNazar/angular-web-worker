@@ -1,1 +1,20 @@
 <h1>Angular Web worker demo</h1>
+
+<button (click)="onClick()">Click Me</button>
+<p>you click button {{count}} times</p>
+<p>Prime number calculation is started {{startWorkerTime | date: 'medium'}}</p>
+<p *ngIf="isCalculating">Prime number calculation is finished {{endWorkerTime | date :'medium'}}</p>
+
+<button (click)="hideImage()">Click to Hide</button>
+<div>
+  <img *ngIf="showImage"
+    src="https://image.shutterstock.com/image-vector/van-livery-design-vector-abstract-600w-1305045229.jpg"
+    alt="Van image">
+</div>
+
+
+<div>
+  <button (click)="calculateCountOfPrimeNumbers(300000)">Click to calculate prime number without webworker button</button>
+  <p>Prime number calculation is started {{startTime | date: 'medium'}}</p>
+  <p *ngIf="isCalculating">Prime number calculation is finished {{endTime | date :'medium'}}</p>
+</div>
